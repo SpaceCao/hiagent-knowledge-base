@@ -1,6 +1,6 @@
 {
   "name": "hiagent-knowledge-base",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "generated_from": {
     "pdf": "/Users/caoxingming/hiagent/bTvusXc1ovwtaOIwIcxqOk9ntD4Kl3d7.pdf",
     "video": "/Users/caoxingming/hiagent/AxEHOiTmY8kFHGlUoz2c6tZK1LXUrhYP.mp4"
@@ -14,27 +14,27 @@
     {
       "file": "01-HiAgent-核心概念.md",
       "title": "HiAgent 核心概念",
-      "topics": ["LLM", "Prompt", "Tool", "Embedding", "RAG", "AI Agent", "MCP"]
+      "topics": ["LLM", "Prompt", "Tool", "Embedding", "RAG", "AI Agent", "MCP", "模型列表", "推理类模型", "非推理类模型"]
     },
     {
       "file": "02-智能体创建与参数配置.md",
       "title": "智能体创建与参数配置",
-      "topics": ["PDF事实", "最小归纳", "模型参数", "RAG范围", "ReAct", "Plan and Execute", "Function Call", "deep_search", "迭代次数"]
+      "topics": ["PDF事实", "最小归纳", "模型参数", "RAG范围", "ReAct", "Plan and Execute", "Function Call", "deep_search", "迭代次数", "系统变量"]
     },
     {
       "file": "03-提示词设计模板.md",
       "title": "提示词设计模板",
-      "topics": ["PDF事实", "最小归纳", "提示词定义", "模板结构", "少样本示例", "注意事项", "自动优化", "选择模板"]
+      "topics": ["PDF事实", "最小归纳", "提示词定义", "模板结构", "少样本示例", "注意事项", "自动优化", "选择模板", "结构化字段"]
     },
     {
       "file": "04-插件-MCP-工作流.md",
       "title": "插件、MCP 与工作流",
-      "topics": ["PDF事实", "最小归纳", "官方插件", "火山托管插件", "三方插件", "自定义插件", "MCP", "工作流"]
+      "topics": ["PDF事实", "最小归纳", "官方插件", "火山托管插件", "三方插件", "自定义插件", "MCP", "工作流", "内置工具", "变量类型"]
     },
     {
       "file": "05-知识库与RAG实践.md",
       "title": "知识库与 RAG 实践",
-      "topics": ["PDF事实", "最小归纳", "预处理", "切分", "向量检索", "全文检索", "混合检索", "Reranker", "Agentic RAG"]
+      "topics": ["PDF事实", "最小归纳", "预处理", "切分", "向量检索", "全文检索", "混合检索", "Reranker", "Agentic RAG", "RAG模板", "导入限制"]
     },
     {
       "file": "06-发布集成与多智能体.md",
