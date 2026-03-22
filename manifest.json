@@ -1,80 +1,178 @@
 {
   "name": "hiagent-knowledge-base",
-  "version": "1.3.0",
+  "version": "2.0.0",
+  "description": "HiAgent 智能体平台知识库，供 AI 智能体阅读和使用",
   "generated_from": {
     "pdf": "/Users/caoxingming/hiagent/bTvusXc1ovwtaOIwIcxqOk9ntD4Kl3d7.pdf",
     "video": "/Users/caoxingming/hiagent/AxEHOiTmY8kFHGlUoz2c6tZK1LXUrhYP.mp4"
   },
+  "credibility": {
+    "pdf": "高可信度，作为主要依据",
+    "video_ocr": "中等可信度，仅作补充参考"
+  },
+  "entry_point": "SYSTEM_PROMPT.md",
+  "quick_start": {
+    "read_order": [
+      "SYSTEM_PROMPT.md",
+      "00-HiAgent-平台功能地图.md",
+      "10-HiAgent-平台能力边界清单.md"
+    ],
+    "design_guide": "SYSTEM_PROMPT.md 第2节 设计决策树",
+    "config_checklist": "SYSTEM_PROMPT.md 第3节 智能体配置检查清单",
+    "prompt_template": "SYSTEM_PROMPT.md 第4节 Prompt设计模板"
+  },
+  "decision_framework": {
+    "knowledge_required": "配置知识库 → 见 05-知识库与RAG实践.md",
+    "external_data_or_action": "配置插件/MCP → 见 04-插件-MCP-工作流.md",
+    "fixed_workflow": "设计工作流 → 见 04-插件-MCP-工作流.md",
+    "diverse_task_types": "拆分多智能体 → 见 06-发布集成与多智能体.md"
+  },
+  "models": {
+    "non_reasoning": {
+      "description": "直接回答问题，适合智能体底座",
+      "examples": ["Claude-opus-4", "ChatGPT-4o-latest", "Doubao-seed-1.6（关闭思考）"]
+    },
+    "reasoning": {
+      "description": "先思考再回答，适合文案/分析/长文",
+      "examples": ["Deepseek-R1", "o3", "Doubao-seed-1.6（开启思考）", "QwQ-32B", "Gemini-2.5-pro"]
+    },
+    "common": {
+      "examples": ["doubao-seed-1.6", "doubao-1.5-pro-32k", "deepseek-v3", "Qwen"]
+    }
+  },
+  "thinking_modes": {
+    "ReAct": "绝大多数场景，工具/知识库调用",
+    "Function_call": "结构化工具调用，需模型支持",
+    "Plan_and_Execute": "复杂多步骤任务，先计划后执行",
+    "deep_search": "检索增强，搭配搜索插件/知识库"
+  },
+  "parameters": {
+    "max_token": { "default": 4096, "description": "模型最大输出字数" },
+    "dialogue_rounds": { "default": 30, "range": "1-30", "description": "对话轮数保留" },
+    "rag_scope": { "default": 3, "range": "1-10", "description": "RAG范围，平衡相关性和token消耗" },
+    "iteration_count": { "description": "迭代次数，复杂任务需调大" }
+  },
+  "prompt_fields": {
+    "Role": "角色定义",
+    "Skills": "能力/工具列表",
+    "Constraint": "约束条件",
+    "Output": "输出目标",
+    "Format": "输出格式",
+    "Check": "自检规则",
+    "Claim": "强调项"
+  },
+  "system_variables": {
+    "SYS_USERID": "用户ID",
+    "SYS_USERNAME": "用户名（推测）",
+    "TARPID": "租户/组织标识（推测）",
+    "FamPID": "租户/组织标识（推测）"
+  },
+  "knowledge_base": {
+    "retrieval_modes": ["向量检索", "全文检索", "混合检索"],
+    "call_modes": ["强制模式", "Auto模式"],
+    "import_limit": { "excel": "约25M", "formats": ["Excel", "CSV"] },
+    "rag_prompt_template": "# 你的任务\\n基于我提供给你的知识库回答问题\\n\\n# 我的问题\\n{question}\\n\\n# 知识库段落\\n{paragraphs}"
+  },
+  "workflow_nodes": ["开始节点", "大模型节点", "插件节点", "知识库节点", "消息节点", "终止节点"],
+  "plugins": {
+    "official": ["Browser", "arxiv", "SQL"],
+    "types": ["官方插件", "火山托管插件", "三方插件", "自定义插件", "MCP插件"]
+  },
+  "built_in_tools": ["Short-term memory", "Long-term memory", "Memory", "Planning", "Reflection", "Self-critics", "Chain of thoughts", "Subgoal decomposition", "Calendar", "calculator", "CodeInterpreter", "Search"],
+  "publish_channels": ["智能体中心", "飞书", "微信", "Web服务", "后端API"],
+  "capabilities": {
+    "supported": [
+      "智能体创建（对话型/流程编排型）",
+      "多种思维方式",
+      "插件体系",
+      "工作流编排",
+      "知识库（向量/全文/混合检索、Reranker）",
+      "多智能体",
+      "多渠道发布"
+    ],
+    "not_supported": [
+      "skills/技能市场",
+      "版本管理/配置回滚",
+      "细粒度权限控制",
+      "批量评测/自动回归",
+      "监控/日志/Trace",
+      "人机协同审批节点",
+      "定时任务"
+    ]
+  },
   "documents": [
+    {
+      "file": "SYSTEM_PROMPT.md",
+      "title": "智能体设计指南",
+      "purpose": "入口文档，包含设计决策树、配置清单、模板、输出规范",
+      "priority": 1
+    },
     {
       "file": "00-HiAgent-平台功能地图.md",
       "title": "HiAgent 平台功能地图",
-      "topics": ["PDF事实", "最小归纳", "平台功能", "智能体", "插件", "工作流", "知识库", "发布", "多智能体"]
+      "purpose": "全局概览，PDF事实与最小归纳对照",
+      "priority": 2
     },
     {
       "file": "01-HiAgent-核心概念.md",
       "title": "HiAgent 核心概念",
-      "topics": ["LLM", "Prompt", "Tool", "Embedding", "RAG", "AI Agent", "MCP", "模型列表", "推理类模型", "非推理类模型"]
+      "purpose": "术语解释、模型列表、决策框架",
+      "priority": 3
     },
     {
       "file": "02-智能体创建与参数配置.md",
       "title": "智能体创建与参数配置",
-      "topics": ["PDF事实", "最小归纳", "模型参数", "RAG范围", "ReAct", "Plan and Execute", "Function Call", "deep_search", "迭代次数", "系统变量"]
+      "purpose": "创建流程、参数说明、系统变量",
+      "priority": 3
     },
     {
       "file": "03-提示词设计模板.md",
       "title": "提示词设计模板",
-      "topics": ["PDF事实", "最小归纳", "提示词定义", "模板结构", "少样本示例", "注意事项", "自动优化", "选择模板", "结构化字段"]
+      "purpose": "Prompt结构、字段说明、示例",
+      "priority": 3
     },
     {
       "file": "04-插件-MCP-工作流.md",
       "title": "插件、MCP 与工作流",
-      "topics": ["PDF事实", "最小归纳", "官方插件", "火山托管插件", "三方插件", "自定义插件", "MCP", "工作流", "内置工具", "变量类型"]
+      "purpose": "插件类型、工作流节点、内置工具",
+      "priority": 3
     },
     {
       "file": "05-知识库与RAG实践.md",
       "title": "知识库与 RAG 实践",
-      "topics": ["PDF事实", "最小归纳", "预处理", "切分", "向量检索", "全文检索", "混合检索", "Reranker", "Agentic RAG", "RAG模板", "导入限制"]
+      "purpose": "RAG流程、检索配置、Prompt模板",
+      "priority": 3
     },
     {
       "file": "06-发布集成与多智能体.md",
       "title": "发布、集成与多智能体",
-      "topics": ["PDF事实", "最小归纳", "发布与集成", "Web 服务", "后端 API", "多 Agent 路由"]
-    },
-    {
-      "file": "07-视频界面观察.md",
-      "title": "视频界面观察",
-      "topics": ["页面路径", "结构化 prompt 字段", "系统变量", "界面模块"]
-    },
-    {
-      "file": "08-常见问题与后续协作清单.md",
-      "title": "常见问题与后续协作清单",
-      "topics": ["协作模板", "问题输入模板", "后续代做方式"]
-    },
-    {
-      "file": "09-面向架构师的HiAgent落地建议.md",
-      "title": "面向架构师的 HiAgent 落地建议",
-      "topics": ["代码库", "Claude", "只读数据库", "无 skills 阶段", "MVP 智能体"]
+      "purpose": "发布渠道、多Agent编排",
+      "priority": 3
     },
     {
       "file": "10-HiAgent-平台能力边界清单.md",
       "title": "HiAgent 平台能力边界清单",
-      "topics": ["明确支持", "未明确支持", "不能下结论", "边界"]
+      "purpose": "明确平台能力边界",
+      "priority": 2
     },
     {
       "file": "11-HiAgent-PDF原文索引.md",
       "title": "HiAgent PDF 原文索引",
-      "topics": ["主题索引", "章节索引", "页码", "原文回查"]
+      "purpose": "PDF页码索引，便于回查",
+      "priority": 4
     },
     {
       "file": "99-raw-pdf-extract.txt",
       "title": "PDF 原始提取文本",
-      "topics": ["raw", "pdf"]
+      "purpose": "原始材料",
+      "priority": 5
     },
     {
       "file": "99-raw-video-ocr.txt",
       "title": "视频 OCR 原始文本",
-      "topics": ["raw", "video", "ocr"]
+      "purpose": "原始材料",
+      "priority": 5,
+      "credibility": "中"
     }
   ]
 }
