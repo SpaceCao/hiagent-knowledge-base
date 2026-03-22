@@ -1,0 +1,80 @@
+{
+  "name": "hiagent-knowledge-base",
+  "version": "1.2.0",
+  "generated_from": {
+    "pdf": "/Users/caoxingming/hiagent/bTvusXc1ovwtaOIwIcxqOk9ntD4Kl3d7.pdf",
+    "video": "/Users/caoxingming/hiagent/AxEHOiTmY8kFHGlUoz2c6tZK1LXUrhYP.mp4"
+  },
+  "documents": [
+    {
+      "file": "00-HiAgent-平台功能地图.md",
+      "title": "HiAgent 平台功能地图",
+      "topics": ["PDF事实", "最小归纳", "平台功能", "智能体", "插件", "工作流", "知识库", "发布", "多智能体"]
+    },
+    {
+      "file": "01-HiAgent-核心概念.md",
+      "title": "HiAgent 核心概念",
+      "topics": ["LLM", "Prompt", "Tool", "Embedding", "RAG", "AI Agent", "MCP"]
+    },
+    {
+      "file": "02-智能体创建与参数配置.md",
+      "title": "智能体创建与参数配置",
+      "topics": ["PDF事实", "最小归纳", "模型参数", "RAG范围", "ReAct", "Plan and Execute", "Function Call", "deep_search", "迭代次数"]
+    },
+    {
+      "file": "03-提示词设计模板.md",
+      "title": "提示词设计模板",
+      "topics": ["PDF事实", "最小归纳", "提示词定义", "模板结构", "少样本示例", "注意事项", "自动优化", "选择模板"]
+    },
+    {
+      "file": "04-插件-MCP-工作流.md",
+      "title": "插件、MCP 与工作流",
+      "topics": ["PDF事实", "最小归纳", "官方插件", "火山托管插件", "三方插件", "自定义插件", "MCP", "工作流"]
+    },
+    {
+      "file": "05-知识库与RAG实践.md",
+      "title": "知识库与 RAG 实践",
+      "topics": ["PDF事实", "最小归纳", "预处理", "切分", "向量检索", "全文检索", "混合检索", "Reranker", "Agentic RAG"]
+    },
+    {
+      "file": "06-发布集成与多智能体.md",
+      "title": "发布、集成与多智能体",
+      "topics": ["PDF事实", "最小归纳", "发布与集成", "Web 服务", "后端 API", "多 Agent 路由"]
+    },
+    {
+      "file": "07-视频界面观察.md",
+      "title": "视频界面观察",
+      "topics": ["页面路径", "结构化 prompt 字段", "系统变量", "界面模块"]
+    },
+    {
+      "file": "08-常见问题与后续协作清单.md",
+      "title": "常见问题与后续协作清单",
+      "topics": ["协作模板", "问题输入模板", "后续代做方式"]
+    },
+    {
+      "file": "09-面向架构师的HiAgent落地建议.md",
+      "title": "面向架构师的 HiAgent 落地建议",
+      "topics": ["代码库", "Claude", "只读数据库", "无 skills 阶段", "MVP 智能体"]
+    },
+    {
+      "file": "10-HiAgent-平台能力边界清单.md",
+      "title": "HiAgent 平台能力边界清单",
+      "topics": ["明确支持", "未明确支持", "不能下结论", "边界"]
+    },
+    {
+      "file": "11-HiAgent-PDF原文索引.md",
+      "title": "HiAgent PDF 原文索引",
+      "topics": ["主题索引", "章节索引", "页码", "原文回查"]
+    },
+    {
+      "file": "99-raw-pdf-extract.txt",
+      "title": "PDF 原始提取文本",
+      "topics": ["raw", "pdf"]
+    },
+    {
+      "file": "99-raw-video-ocr.txt",
+      "title": "视频 OCR 原始文本",
+      "topics": ["raw", "video", "ocr"]
+    }
+  ]
+}
