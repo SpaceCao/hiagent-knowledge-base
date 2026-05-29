@@ -18,7 +18,7 @@
     {
       "file": "wiki/参数配置.md",
       "title": "参数配置",
-      "description": "思维方式、关键参数、系统变量"
+      "description": "思维方式、关键参数、系统变量、API透传"
     },
     {
       "file": "wiki/提示词设计.md",
@@ -28,39 +28,69 @@
     {
       "file": "wiki/插件与MCP.md",
       "title": "插件与MCP",
-      "description": "插件类型、MCP 协议、内置工具"
+      "description": "插件类型、MCP协议、高代码MCP、内置工具"
     },
     {
       "file": "wiki/工作流.md",
       "title": "工作流",
-      "description": "节点类型、变量传递、常见结构"
+      "description": "节点类型、变量传递、常见结构、画布操作"
     },
     {
       "file": "wiki/知识库与RAG.md",
       "title": "知识库与RAG",
-      "description": "RAG 流程、检索配置、Agentic RAG"
+      "description": "RAG流程、检索配置、图文混搜、解析服务"
     },
     {
       "file": "wiki/发布与集成.md",
       "title": "发布与集成",
-      "description": "发布渠道、Web 服务、API 集成"
+      "description": "发布渠道、Web服务、API集成、SSO、运行态部署"
     },
     {
       "file": "wiki/多智能体.md",
       "title": "多智能体",
-      "description": "多 Agent 编排、路由 Agent"
+      "description": "路由Agent、规划协作型智能体、A2A服务"
     },
     {
       "file": "wiki/能力边界.md",
       "title": "能力边界",
-      "description": "平台支持/不支持/不确定的能力"
+      "description": "平台支持/不支持/不确定的能力（基于v2.5.0）"
+    },
+    {
+      "file": "wiki/版本更新记录.md",
+      "title": "版本更新记录",
+      "description": "v2.2.0~v2.5.0各版本功能更新汇总"
+    },
+    {
+      "file": "wiki/平台管理.md",
+      "title": "平台管理",
+      "description": "访问控制、资源管理、运营分析、系统设置"
+    },
+    {
+      "file": "wiki/开发指南.md",
+      "title": "开发指南",
+      "description": "开放集成、模型适配、渠道适配、插件接入、SDK集成、运行态部署"
+    },
+    {
+      "file": "wiki/常见问题.md",
+      "title": "常见问题",
+      "description": "智能体/工作流/知识库/插件/提示词/SSO常见问题和解决方案"
+    },
+    {
+      "file": "wiki/最佳实践.md",
+      "title": "最佳实践",
+      "description": "新手教程、设计模式、调优技巧"
     }
   ],
   "decision_tree": {
     "私有知识": "wiki/知识库与RAG.md",
     "实时数据/外部动作": "wiki/插件与MCP.md",
     "固定流程": "wiki/工作流.md",
-    "任务类型差异大": "wiki/多智能体.md"
+    "任务类型差异大": "wiki/多智能体.md",
+    "复杂任务需规划": "wiki/多智能体.md",
+    "集成/二次开发": "wiki/开发指南.md",
+    "平台管理": "wiki/平台管理.md",
+    "使用问题": "wiki/常见问题.md",
+    "设计参考": "wiki/最佳实践.md"
   },
   "quick_reference": {
     "模型选择": {
@@ -74,11 +104,18 @@
     },
     "参数默认值": {
       "max_token": 4096,
-      "对话轮数": 30,
-      "RAG范围": 3
+      "对话轮数": "30（最大100）",
+      "RAG范围": 3,
+      "触发器超时": "最大30分钟（v2.5.0+）"
+    },
+    "智能体类型": {
+      "自由对话": "对话型",
+      "固定流程": "流程编排型",
+      "复杂任务规划": "规划协作型（v2.5.0+）"
     }
   },
   "credibility": {
+    "official_doc": "高",
     "pdf": "高",
     "video_ocr": "中"
   }
