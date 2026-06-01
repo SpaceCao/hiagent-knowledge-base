@@ -79,6 +79,16 @@
       "file": "wiki/最佳实践.md",
       "title": "最佳实践",
       "description": "新手教程、设计模式、调优技巧"
+    },
+    {
+      "file": "wiki/API参考.md",
+      "title": "API参考",
+      "description": "智能体API、平台接口、文件上传、调用示例"
+    },
+    {
+      "file": "wiki/智能体搭建指南.md",
+      "title": "智能体搭建指南",
+      "description": "智能体创建、编排配置、调试技巧"
     }
   ],
   "decision_tree": {
