@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774346664003,
+  "projectRoot": "/Users/caoxingming/laiyifen-codes/ai_coding/hiagent-knowledge-base",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "wiki": {
+      "path": "wiki",
+      "purpose": null,
+      "fileCount": 10,
+      "lastAccessed": 1774346663979,
+      "keyFiles": [
+        "Home.md",
+        "参数配置.md",
+        "发布与集成.md",
+        "多智能体.md",
+        "工作流.md"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "Skills公众号终稿-优化版.md",
+      "accessCount": 3,
+      "lastAccessed": 1774347491178,
+      "type": "file"
+    },
+    {
+      "path": "skills-images/generate_images.py",
+      "accessCount": 2,
+      "lastAccessed": 1774347390134,
+      "type": "file"
+    },
+    {
+      "path": "skills-images/03-architecture.png",
+      "accessCount": 1,
+      "lastAccessed": 1774347547732,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
